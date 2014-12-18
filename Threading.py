@@ -10,7 +10,7 @@ print_lock = threading.Lock()
 
 
 def exampleJob(worker):
-    time.sleep(0.5)
+    time.sleep(1.0)
     with print_lock:
         print(threading.current_thread().name, worker)
 
@@ -24,12 +24,13 @@ def threader():
         q.task_done()
 
 
-
+## =======
 
 q = Queue()
 ## the number of workers is 10
 ## each thread has one worker
 for x in range(10):
+    # sending a function to a thread
     t = threading.Thread(target=threader)
     t.daemon = True
     t.start()
