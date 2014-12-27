@@ -7,3 +7,4 @@ subprocess.call('ls',shell=True)
 ## this stores the value from the OS
 output = subprocess.check_output('ls',shell=True)
 print(output)
+
