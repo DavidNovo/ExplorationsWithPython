@@ -1,6 +1,11 @@
 __author__ = 'dnovogrodsky'
 import re
-machineName = re.compile('(deflogix-pc.def-logix.local)')
+import pathlib
+import os
+from subprocess import call
+
+#machineName = re.compile('(deflogix-pc.def-logix.local)')
+machineName = re.compile('(andre_sp3.def-logix.local)')
 
 inputSyslogMessages = open('messages','r')
 outputSyslogMessages = open('syslogMessages.txt', 'w')
@@ -10,19 +15,30 @@ for line in inputSyslogMessages:
     # testing
     print(line)
     # check for matching the machine name in question
-    match = re.match(machineName, line)
-    if match:
+    searchResults = re.search(machineName, line)
+    if searchResults:
         # if there is a match, write line to new file
         outputSyslogMessages.write(line)
-        # testing stuff
-        ## this prints the string 'Hello'
-        print(match.string)
-        ## this prints the regular exzpression passed to the match() method
-        print(match.re)
 
 # at end of all lines close file
 inputSyslogMessages.close()
 outputSyslogMessages.close()
 
+# check that the file exists
+input = pathlib.Path('syslogMessages.txt')
 
+# run command line it ingest the file
+if input.exists():
+    # ingest file into Hadoop
+    print("ready to ingest")
+    # run this command on the command line
+    ## sudo -u hdfs hadoop fs -copyFromLocal ~/Desktop/CDRecords.txt /user/cloudera/vector/callRecords/
+    call("sudo -u hdfs hadoop fs -copyFromLocal syslogMessages.txt /user/cloudera/vector/callRecords/",
+         shell=True)
+    call("hadoop fs -copyFromLocal syslogMessages.txt /user/cloudera/vector/callRecords/",
+         shell=True)
 
+# if there is no file print an error message
+print('no file to ingest')
+currentDirectory = os.getcwd()
+print(currentDirectory)
