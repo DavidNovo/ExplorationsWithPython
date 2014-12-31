@@ -6,13 +6,17 @@ from matplotlib import style
 # adding a predefined style
 style.use('dark_background')
 
-x = [5,6,7,8]
-y = [7,3,8,3]
+x = [0,2,7,8]
+y = [0,3,5,9]
+
+x2 = [0,4,6,9]
+y2 = [0,2,4,6]
 
 print(len(x))
 print(len(y))
 
 plt.plot(x,y)
+plt.plot(x2,y2)
 
 # adding titles and labels
 plt.title("Epic Chart")
