@@ -1,6 +1,10 @@
 __author__ = 'davidnovogrodsky_wrk'
 
 from matplotlib import pyplot as plt
+from matplotlib import style
+
+# adding a predefined style
+style.use('dark_background')
 
 x = [5,6,7,8]
 y = [7,3,8,3]
