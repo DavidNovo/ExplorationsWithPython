@@ -25,4 +25,6 @@ plt.ylabel('y-axis')
 plt.xlabel('x-label')
 # making the legend show
 plt.legend()
+# adding a grid
+plt.grid(True,color='k')
 plt.show()
