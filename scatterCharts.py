@@ -17,8 +17,8 @@ print(len(x))
 print(len(y))
 
 
-plt.scatter(x,y,label='line 1')
-plt.scatter(x2,y2,label='line 2')
+plt.scatter(x,y,color='c')
+plt.scatter(x2,y2,color='k')
 
 # adding titles and labels
 plt.title("Epic Chart")
