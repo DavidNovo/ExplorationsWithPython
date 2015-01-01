@@ -16,9 +16,9 @@ y2 = [0,2,4,6]
 print(len(x))
 print(len(y))
 
-# adding a legend
-plt.plot(x,y,'b',linewidth=5,label='line 1')
-plt.plot(x2,y2,'g', label='line 2')
+
+plt.scatter(x,y,label='line 1')
+plt.scatter(x2,y2,label='line 2')
 
 # adding titles and labels
 plt.title("Epic Chart")
