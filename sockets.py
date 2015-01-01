@@ -24,6 +24,17 @@ s.connect((server,port))
 # so we need to encode the string before sending
 s.send(request.encode())
 # size of buffer
+# this also does decoding
 result = s.recv(4000)
 
+# this prints the entire buffer at once
+# and only the contents of the buffer
 print(result)
+print("\n\n\n")
+
+
+# prints out the result
+# in 1024 chunks
+while (len(result) > 0):
+    print(result)
+    result= s.recv(1024)
