@@ -13,7 +13,7 @@ style.use('ggplot')
 x,y = np.loadtxt('dataPoints.txt',unpack=True,
                  delimiter=',')
 
-plt.plot(x,y)
+plt.plot(x,y, color='g', )
 
 # adding titles and labels
 plt.title("Epic Chart")
