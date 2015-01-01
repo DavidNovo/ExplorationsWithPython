@@ -10,6 +10,8 @@ import numpy as np
 style.use('ggplot')
 
 #open the csv file
+#each record is ended with a new line
+# no extra end line at the end of the file
 x,y = np.loadtxt('dataPoints.txt',unpack=True,
                  delimiter=',')
 
