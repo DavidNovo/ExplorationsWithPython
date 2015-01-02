@@ -16,7 +16,6 @@ except socket.error as e:
 # number of connections to allow
 s.listen(5)
 conn, addr = s.accept()
-
 print('connected to:' +addr[0]+':'+str(addr[1]))
 
 
