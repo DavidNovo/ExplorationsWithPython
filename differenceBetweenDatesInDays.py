@@ -55,12 +55,12 @@ def test():
         try:
             result = daysBetweenDates(*args)
             if result != answer:
-                print "Test with data:", args, "failed"
+                print ("Test with data:", args, "failed")
             else:
-                print "Test case passed!"
+                print ("Test case passed!")
         except AssertionError:
             if answer == "AssertionError":
-                print "Nice job! Test case {0} correctly raises AssertionError!\n".format(args)
+                print ("Nice job! Test case {0} correctly raises AssertionError!\n".format(args))
             else:
-                print "Check your work! Test case {0} should not raise AssertionError!\n".format(args)
+                print ("Check your work! Test case {0} should not raise AssertionError!\n".format(args))
 test()
