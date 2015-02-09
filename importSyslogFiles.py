@@ -37,6 +37,7 @@ if input.exists():
          shell=True)
     call("hadoop fs -copyFromLocal syslogMessages.txt /user/cloudera/vector/callRecords/",
          shell=True)
+    os.system('sudo -u hdfs hadoop fs -copyFromLocal syslogMessages.txt /user/cloudera/vector/callRecords/')
 
 # if there is no file print an error message
 print('no file to ingest')
